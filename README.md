@@ -1,4 +1,14 @@
-chef-stunnel
+Description
+===========
+
+This Chef cookbook installs stunnel. 
+
+Requirements
 ============
 
-Chef cookbook for installing stunnel
+Attributes
+==========
+
+Usage
+=====
+
