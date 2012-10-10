@@ -49,7 +49,7 @@ The `default` recipe will write each certificate to a `.pem` file and create a s
 License and Author
 ==================
 
-Author:: Jochen Lillich <jochen@freistil.it>
+Author:: freistil IT <cookbooks@freistil.it>
 
 Copyright 2012, freistil IT
 
