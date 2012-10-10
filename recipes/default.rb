@@ -20,3 +20,33 @@
 package "stunnel4" do
   action :install
 end
+
+service "stunnel4" do
+	supports :start => true, :stop => true, :reload => true, :restart => true
+	action [:enable, :start]
+end
+
+template "/etc/stunnel/stunnel.conf" do
+	source "stunnel.conf.erb"
+	owner "root"
+	group "root"
+	mode 0644
+	variables(
+		:services => node['stunnel']['services']
+	)
+	notifies :reload, "service[stunnel4]"
+end
+
+unless node['stunnel']['certs'].empty? 
+	node['stunnel']['certs'].each do |name, pem|
+
+		file "/etc/stunnel/#{name}.pem" do
+			content pem
+			owner "root"
+			group "root"
+			mode 0644
+			notifies :reload, "service[stunnel4]"
+		end
+
+	end
+end
