@@ -44,7 +44,7 @@ unless node['stunnel']['certs'].empty?
 			content pem
 			owner "root"
 			group "root"
-			mode 0644
+			mode 0600
 			notifies :reload, "service[stunnel4]"
 		end
 
