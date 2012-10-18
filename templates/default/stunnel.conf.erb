@@ -15,8 +15,8 @@ setgid = stunnel4
 pid = /stunnel4.pid
 
 ; Debugging stuff (may useful for troubleshooting)
-;debug = 7
-;output = /var/log/stunnel4/stunnel.log
+debug = <%= node['stunnel']['debug_level'] %>
+output = /var/log/stunnel4/stunnel.log
 
 ; *****************************************************************************
 ; * Service Defaults (may also be specified in individual service sections)

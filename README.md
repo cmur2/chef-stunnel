@@ -17,6 +17,7 @@ Attributes
 
 See `attributes/default.rb` for default values.
 
+* `node['stunnel']['debug_level']` - debug level (default: 0)
 * `node['stunnel']['services']` - service definitions
 * `node['stunnel']['certs']` - SSL certificates
 
