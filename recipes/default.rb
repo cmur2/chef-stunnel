@@ -30,11 +30,11 @@ template "/etc/stunnel/stunnel.conf" do
 	source "stunnel.conf.erb"
 	owner "root"
 	group "root"
-	mode 0644
+	mode 00644
 	variables(
 		:services => node['stunnel']['services']
 	)
-	notifies :reload, "service[stunnel4]"
+	notifies :restart, "service[stunnel4]"
 end
 
 unless node['stunnel']['certs'].empty? 
@@ -44,8 +44,8 @@ unless node['stunnel']['certs'].empty?
 			content pem
 			owner "root"
 			group "root"
-			mode 0600
-			notifies :reload, "service[stunnel4]"
+			mode 00600
+			notifies :restart, "service[stunnel4]"
 		end
 
 	end
