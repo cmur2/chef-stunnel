@@ -1,3 +1,4 @@
+name             "stunnel"
 maintainer       "freistil IT"
 maintainer_email "cookbooks@freistil.it"
 license          "Apache 2.0"
